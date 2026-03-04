@@ -1,39 +1,58 @@
-﻿const slides = Array.from(document.querySelectorAll(".slide"));
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
-const dotsWrap = document.querySelector(".dots");
+const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
-let currentIndex = 0;
+anchorLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href");
+    if (!targetId || targetId === "#") return;
 
-function renderDots() {
-  if (!dotsWrap) return;
+    const target = document.querySelector(targetId);
+    if (!target) return;
 
-  dotsWrap.innerHTML = "";
-  slides.forEach((_, index) => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.setAttribute("aria-label", `${index + 1}踰??щ씪?대뱶`);
-    if (index === currentIndex) btn.classList.add("is-active");
-    btn.addEventListener("click", () => goTo(index));
-    dotsWrap.appendChild(btn);
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
-}
-
-function goTo(index) {
-  currentIndex = (index + slides.length) % slides.length;
-  slides.forEach((slide, i) => {
-    slide.classList.toggle("is-active", i === currentIndex);
-  });
-  renderDots();
-}
-
-prevBtn?.addEventListener("click", () => goTo(currentIndex - 1));
-nextBtn?.addEventListener("click", () => goTo(currentIndex + 1));
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "ArrowLeft") goTo(currentIndex - 1);
-  if (event.key === "ArrowRight") goTo(currentIndex + 1);
 });
 
-goTo(0);
+// 캐릭터 디자인
+const characterImgs = document.querySelectorAll(".character-img img");
+let currentIdx = 0; // 현재 보여져야 하는 이미지의 인덱스
+for (let i = 0; i < characterImgs.length; i++) {
+  characterImgs[i].style.display = "none";
+}
+characterImgs[currentIdx].style.display = "block";
 
+const characterLeftBtn = document.querySelector("#character-left-btn");
+const characterRightBtn = document.querySelector("#character-right-btn");
+characterLeftBtn.addEventListener("click", () => {
+  if (currentIdx === 0) return;
+  characterImgs[currentIdx].style.display = "none";
+  characterImgs[--currentIdx].style.display = "block";
+});
+characterRightBtn.addEventListener("click", () => {
+  if (currentIdx !== characterImgs.length - 1) {
+    characterImgs[currentIdx].style.display = "none";
+    characterImgs[++currentIdx].style.display = "block";
+  }
+});
+
+// 일러스트
+const IllustImgs = document.querySelectorAll(".illust-img img");
+let currentIllustIdx = 0;
+for (let i = 0; i < IllustImgs.length; i++) {
+  IllustImgs[i].style.display = "none";
+}
+IllustImgs[currentIllustIdx].style.display = "block";
+
+const IllustLeftBtn = document.querySelector("#illust-left-btn");
+const IllustRightBtn = document.querySelector("#illust-right-btn");
+IllustLeftBtn.addEventListener("click", () => {
+  if (currentIllustIdx === 0) return;
+  IllustImgs[currentIllustIdx].style.display = "none";
+  IllustImgs[--currentIllustIdx].style.display = "block";
+});
+IllustRightBtn.addEventListener("click", () => {
+  if (currentIllustIdx !== IllustImgs.length - 1) {
+    IllustImgs[currentIllustIdx].style.display = "none";
+    IllustImgs[++currentIllustIdx].style.display = "block";
+  }
+});

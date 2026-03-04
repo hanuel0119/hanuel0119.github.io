@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -7,51 +7,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="portfolio.html">Portfolio</a>
+      <a class="brand" href="/">Portfolio</a>
       <nav class="nav">
-        <a href="portfolio.html">Portfolio</a>
-        <a href="#about">Character</a>
-        <a href="#works">Game</a>
-        <a href="#about">Introduce</a>
+        <div class="nav-item has-dropdown">
+          <a href="portfolio.html">Portfolio</a>
+          <div class="dropdown-menu">
+            <a href="character-more.html">Character</a>
+            <a href="game-more.html">Game</a>
+            <a href="illustration-more.html">Illustration</a>
+            <a href="emoji.html">Emoji</a>
+          </div>
+        </div>
+        <a href="#introduce">Introduce</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero" id="hero" aria-label="?곗＜ ?ы듃?대━???뚭컻">
-        <div class="avatar-wrap">
-          <div class="ring ring-1"></div>
-          <div class="ring ring-2"></div>
-          <div class="avatar">
-            <div class="avatar-head"></div>
-            <div class="avatar-body"></div>
-          </div>
-        </div>
+      <section class="main-hero" aria-label="메인 비주얼"></section>
 
-        <h1>Designer</h1>
-        <p class="subtitle">고은정</p>
-      </section>
-
-      <section class="about section" id="about">
-        <h2 class="section-title">ME</h2>
-        <div class="profile-grid">
-          <div class="profile-lines">
-            <p>2005.01.19</p>
-            <p>KO EUN JUNG</p>
-            <p>Product designer</p>
-            <p>Character designer</p>
-          </div>
+      <section class="section profile" id="introduce">
+        <h1 class="section-title">ME</h1>
+        <div class="profile-lines">
+          <p>2005.01.19</p>
+          <p>KO EUN JUNG</p>
+          <p>Product Designer</p>
+          <p>Character Artist</p>
         </div>
 
         <div class="split-box">
           <div class="split-col">
-            <h3>EDUCATION</h3>
+            <h2>EDUCATION</h2>
             <ul>
               <li>중랑초등학교 졸업</li>
               <li>혜원여자중학교 졸업</li>
@@ -60,60 +52,194 @@
             </ul>
           </div>
           <div class="split-col">
-            <h3>SOFTWARE</h3>
-            <ul class="software-list">
+            <h2>SOFTWARE</h2>
+            <ul>
               <li>Photoshop</li>
               <li>Illustrator</li>
-              <li>Excel</li>
               <li>Maya</li>
-              <li>Grush</li>
+              <li>Excel</li>
+              <li>Clip Studio Paint</li>
             </ul>
           </div>
         </div>
       </section>
-      <section class="works section" id="works">
-        <div class="carousel" aria-label="작업물 슬라이드">
-          <button class="nav-btn prev" type="button" aria-label="이전 슬라이드">
-            &#8249;
-          </button>
-          <div class="slides">
-            <article class="slide is-active">
-              <div class="slide-image theme-gray"></div>
-              <div class="slide-copy">
-                <h3>캐릭터 디자인 <span>Character Design</span></h3>
-                <p>
-                  캐주얼한 느낌의 LD와 SD로 다양한 느낌의 캐릭터들을
-                  디자인합니다.
-                </p>
-                <a class="more-btn" href="#">더보기</a>
+
+      <section class="section intro-copy">
+        <p class="intro-title">
+          안녕하세요. 캐릭터 디자이너 & 영상 편집을 하고 있는
+          고은정(하늘)입니다.
+        </p>
+        <h2>작업 스타일</h2>
+        <p class="style-body">
+          캐주얼하고 심플한 스타일의 2D 그림을 주로 그립니다. 메인이
+          캐주얼풍일뿐 이외에도 다양한 그림체로 작업이 가능합니다. SD, LD
+          구분없이 작업하며, 간단한 모션 애니메이션(숏폼) 제작도 일부
+          가능합니다.
+        </p>
+        <h2>작업 태도</h2>
+        <p>
+          첫째. 작업에 몰두하며, 참고 자료 및 지시 사항을 꼼꼼이 참고 하여
+          작업을 진행합니다.
+        </p>
+        <p>둘째. 동료 또는 고객과 원만한 소통을 할 준비가 되어있습니다.</p>
+        <p>셋째. 대중성만을 좇지 않고, 회사와 고객의 위주로 맞추겠습니다.</p>
+      </section>
+
+      <section class="works">
+        <div class="work">
+          <div class="work-img character-img">
+            <button
+              class="arrow arrow-left"
+              type="button"
+              aria-label="이전"
+              id="character-left-btn"
+            >
+              &#10094;
+            </button>
+            <img src="https://picsum.photos/seed/picsum/540/360" alt="" />
+            <img src="https://picsum.photos/id/237/1000/400" alt="" />
+            <img src="https://picsum.photos/1000/800" alt="" />
+            <button
+              class="arrow arrow-right"
+              type="button"
+              aria-label="다음"
+              id="character-right-btn"
+            >
+              &#10095;
+            </button>
+            <div class="work-text">
+              <h2>캐릭터 디자인 <span>Character Design</span></h2>
+              <p>다양한 세계관과 목적에 맞는 SD/LD 캐릭터를 디자인합니다.</p>
+              <a class="more-btn" href="portfolio.html">더보기</a>
+            </div>
+          </div>
+        </div>
+        <div class="work2">
+          <div class="work-text2">
+            <h2>일러스트 <span>Illust Design</span></h2>
+            <p>
+              캐릭터를 활용한 분위기에 맞는 일러스트 및 분위기 있는 배경을
+              제작합니다.
+            </p>
+            <a class="more-btn" href="portfolio.html">더보기</a>
+          </div>
+          <div class="work">일러스트</div>
+          <div class="work-img2 illust-img">
+            <button
+              class="arrow arrow-left"
+              type="button"
+              aria-label="이전"
+              id="illust-left-btn"
+            >
+              &#10094;
+            </button>
+            <img src="https://picsum.photos/1000/800" alt="" />
+            <img src="https://picsum.photos/900/800" alt="" />
+            <img src="https://picsum.photos/800/800" alt="" />
+            <button
+              class="arrow arrow-right"
+              type="button"
+              aria-label="다음"
+              id="illust-right-btn"
+            >
+              &#10095;
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!--
+      <section class="section works" id="character">
+        <article class="work-row">
+          <div class="work-thumb">
+            
+           
+          </div>
+          <div class="work-copy">
+            <h2>캐릭터 디자인 <span>Character Design</span></h2>
+            <p>다양한 세계관과 목적에 맞는 SD/LD 캐릭터를 디자인합니다.</p>
+            <a class="more-btn" href="portfolio.html">더보기</a>
+          </div>
+        </article>
+
+        <article class="work-row reverse" id="game">
+          <div class="work-thumb">
+            <button class="arrow arrow-left" type="button" aria-label="이전">
+              &#10094;
+            </button>
+            <button class="arrow arrow-right" type="button" aria-label="다음">
+              &#10095;
+            </button>
+          </div>
+          <div class="work-copy">
+            <h2>일러스트 <span>Illustration</span></h2>
+            <p>게임 및 프로모션 용도의 일러스트를 콘셉트에 맞춰 제작합니다.</p>
+            <a class="more-btn" href="portfolio.html">더보기</a>
+          </div>
+        </article>
+      </section>
+-->
+
+      <section class="section video-area">
+        <div class="video-thumb"></div>
+        <h2>포트폴리오 소개 영상</h2>
+        <p>작업한 그림을 모아 보여주는 영상입니다.</p>
+      </section>
+
+      <section class="skills-showcase" id="skills">
+        <div class="skills-inner">
+          <p class="skills-en">Skill</p>
+          <h2 class="skills-title">스킬</h2>
+          <p class="skills-desc">
+            Adobe 계열의 프로그램을 능숙하게 활용할 수 있습니다.
+          </p>
+
+          <div class="skills-divider" aria-hidden="true">
+            <span></span>
+            <i></i>
+            <span></span>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card">
+              <div class="skill-ring ps-strong">
+                <div class="skill-app ps">Ps</div>
               </div>
+              <h3>Adobe<br />Photoshop</h3>
+              <p>-</p>
             </article>
-            <article class="slide">
-              <div class="slide-image theme-blue"></div>
-              <div class="slide-copy">
-                <h3>UI 비주얼 <span>UI Visual</span></h3>
-                <p>게임 화면을 위한 구성과 그래픽 스타일을 설계합니다.</p>
-                <a class="more-btn" href="#">더보기</a>
+
+            <article class="skill-card">
+              <div class="skill-ring">
+                <div class="skill-app ai">Ai</div>
               </div>
+              <h3>Adobe<br />Illustrator</h3>
+              <p>-</p>
             </article>
-            <article class="slide">
-              <div class="slide-image theme-pink"></div>
-              <div class="slide-copy">
-                <h3>일러스트 작업 <span>Illustration</span></h3>
-                <p>
-                  콘셉트에 맞는 색감과 분위기로 캐릭터 일러스트를 제작합니다.
-                </p>
-                <a class="more-btn" href="#">더보기</a>
+
+            <article class="skill-card">
+              <div class="skill-ring ae-low">
+                <div class="skill-app ae">Ae</div>
               </div>
+              <h3>Adobe<br />After Effects</h3>
+              <p>-</p>
             </article>
           </div>
-          <button class="nav-btn next" type="button" aria-label="다음 슬라이드">
-            &#8250;
-          </button>
         </div>
-        <div class="dots" aria-label="슬라이드 위치 표시"></div>
       </section>
     </main>
+
+    <footer class="footer">
+      <h2>Portfolio</h2>
+      <div class="footer-meta">
+        <p>고은정(하늘) 포트폴리오 사이트</p>
+        <p>Ko eun jung(Haneul) portfolio site</p>
+        <p>이메일 : freeko119@naver.com</p>
+      </div>
+      <small
+        >Copyright (c) 2026 by Ko eun jung(Haneul) All Right Reserved.</small
+      >
+    </footer>
 
     <script src="script.js"></script>
   </body>
